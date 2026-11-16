@@ -1,4 +1,4 @@
-# Sistema de Controle de Estoque do Mercadinho Bom Vizinho
+<img width="4032" height="1285" alt="image" src="https://github.com/user-attachments/assets/15d4dab0-b79c-437b-9f19-c87da2e49ad6" /># Sistema de Controle de Estoque do Mercadinho Bom Vizinho
 
 MVP acadêmico de uma aplicação web responsiva para cadastrar produtos, registrar entradas e saídas, consultar saldos e destacar estoque baixo.
 
@@ -58,3 +58,14 @@ As consultas SQL são parametrizadas. A chave secreta deve ser fornecida por var
 
 ## Licença
 Uso acadêmico.
+
+## Auto-revisão técnica
+
+A aplicação utiliza uma arquitetura monolítica modular, separando interface, regras de negócio e persistência. A revisão confirmou que as operações de entrada e saída são processadas em `services.py`, enquanto o acesso ao SQLite permanece concentrado em `db.py`.
+
+As consultas ao banco utilizam parâmetros, reduzindo o risco de injeção de SQL. A regra de saída impede que o saldo fique negativo e produz uma mensagem compreensível para o usuário.
+
+Como oportunidade de evolução, a aplicação deverá receber autenticação completa antes de uma implantação pública, além de proteção CSRF, HTTPS e controle individual de sessões.
+
+
+
